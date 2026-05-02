@@ -16,11 +16,20 @@ public class CommandeAchat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idcmdachat;
+    @Column(nullable = false)
     private LocalDate datecmdachat;
+    @Column(nullable = false)
     private LocalDate datelivreeprecmdachat;
+    @Column(nullable = false)
+    private int montantcmdAchat;
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private SatutCmdAchat statut;
     public enum SatutCmdAchat {
         Reçu, NON_LIVRE
     }
+    @ManyToOne
+    @JoinColumn(name = "idFour",referencedColumnName = "idfou")
+    private Fournisseur fournisseur;
+
 }

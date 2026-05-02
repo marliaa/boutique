@@ -9,11 +9,16 @@ import lombok.Data;
 public class Fournisseur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idfour;
+    @Column(nullable = false)
     private String nameFournisseur ;
+    @Column(nullable = false)
     private String adressFournisseur ;
+    @Column(nullable = false)
     private String phoneFournisseur ;
+    @Column(nullable = false)
     private String emailFournisseur ;
+    @Column(nullable = false)
     private String paysFournisseur ;
 
 

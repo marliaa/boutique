@@ -8,7 +8,16 @@ import lombok.Data;
 @Data
 public class Produit {
     @Id
-    private Long id;
+    private Long idprod;
+    @Column(nullable = false)
+    private String desprod;
+    @Column(nullable = false)
+    private int qtestock;
+    @Column(nullable = false)
+    private int prixprod;
+    @ManyToOne
+    @JoinColumn(name = "idFour",referencedColumnName = "idfour")
+    private Fournisseur fournisseur;
 
 
 }

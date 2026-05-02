@@ -16,7 +16,13 @@ public class LigneCommande {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idLigneCmd;
+    @Column(nullable = false)
     private int qteLigneCmd;
+    @Column(nullable = false)
     private int qteLigneCmdLivree;
-    private int puLigneCmd;
+    @Column(nullable = false)
+    private int prixunLigneCmd;
+    @ManyToOne
+    @JoinColumn(name = "refprod",referencedColumnName = "idorod")
+    private Produit produit;
 }

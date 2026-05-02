@@ -15,7 +15,9 @@ public class Facture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idfact;
+    @Column(nullable = false)
     private LocalDate dateEmisfact;
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatutFacture statutfact;
     public enum StatutFacture {

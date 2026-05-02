@@ -16,6 +16,7 @@ public class Livraison {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idLivraison;
+    @Column(nullable = false)
     private LocalDate dateLivraison;
     @Enumerated(EnumType.STRING)
     private StatutLivraison statut;
